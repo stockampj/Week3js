@@ -17,18 +17,20 @@ $(document).ready(function() {
        return check;
     };
 
-
-    var outputArray = []
+    var initialArray = []
     function arrayPopulator(number) {
       for (var i=0; i<=userInput; i++) {
-        outputArray.push(i);
+        var element = i.toString();
+        initialArray.push(element);
       }
+
     };
+
 
 
 //Director
     arrayPopulator(userInput)
-    console.log(outputArray);
+    console.log(initialArray);
 
   });
 });
