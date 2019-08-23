@@ -50,32 +50,24 @@ button {
   margin: 10px;
 }
 
+.imgbutton {
+  height: 20px;
+}
+
 .display {
   display: none;
   padding: 5px;
   text-align: justify;
   font-size: 20px;
-  width: 98%;
-  height: 98%;
+  width: 90%;
+  height: 90%;
   position: absolute;
   top: 175px;
-  left: 0;
 }
 .display {
   z-index: -1;
 }
 
-
-.error1 {
-  color: lightblue;
-  font-weight: 800;
-}
-
-.error2 {
-  color: #9cc99b;
-  font-weight: 800;
-  font-size: 25px;
-}
 .error3 {
   color: rgb(207, 128, 139);
   background-color: rgba(12, 14, 36, 0.3);
@@ -118,4 +110,39 @@ button {
 }
 .color9 {
   color: white;
+}
+
+
+/* Blinking Effects were found here: https://codepen.io/_Master_/pen/PRdjmQ?editors=1100 */
+@-webkit-keyframes blinker {
+  from {opacity: 1.0;}
+  to {opacity: 0.2;}
+}
+
+.blinkFast{
+	text-decoration: blink;
+	-webkit-animation-name: blinker;
+	-webkit-animation-duration: 2.4s;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-timing-function:ease-in-out;
+	-webkit-animation-direction: alternate;
+}
+
+.blinkMed{
+	text-decoration: blink;
+	-webkit-animation-name: blinker;
+	-webkit-animation-duration: 4.1s;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-timing-function:ease-in-out;
+	-webkit-animation-direction: alternate;
+}
+
+
+.blinkSlow{
+	text-decoration: blink;
+	-webkit-animation-name: blinker;
+	-webkit-animation-duration: 7.2;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-timing-function:ease-in-out;
+	-webkit-animation-direction: alternate;
 }

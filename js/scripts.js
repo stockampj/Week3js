@@ -38,25 +38,38 @@ $(document).ready(function() {
     var userInput = $("#userNumber").val();
     //Display Text
     $(".display").text("");
-    $(".display").fadeIn(8000);
+    $(".display").fadeIn(3000);
     outputProcessor(userInput).forEach(function(number) {
       if (number === "error3") {
-        $(".display").append(" " + "<span class=\"error3\">" + "I'm s0rRy, Dave. I'm afR@id I caN't d0 tHat!" + "</span>" + " ");
+        $(".display").append(hexAssigner("error3") + "I'm s0rRy, Dave. I'm afR@id I caN't d0 tHat!" + "</span>" + " ");
       } else if (number === "error2") {
-        $(".display").append(hexAssigner() + " b00p " + "</span>");
+        $(".display").append(hexAssigner("error2") + " b00p " + "</span>");
       } else if (number === "error1") {
-        $(".display").append(hexAssigner() + " beep " + "</span>");
+        $(".display").append(hexAssigner("error1") + " beep " + "</span>");
       } else {
-        $(".display").append(hexAssigner() + number + "</span> ");
+        $(".display").append(hexAssigner("digit") + number + "</span> ");
       }
     });
 
-    function hexAssigner() {
-      var tagList = ["<span class=\"color0\">", "<span class=\"color1\">", "<span class=\"color2\">", "<span class=\"color3\">", "<span class=\"color4\">", "<span class=\"color5\">", "<span class=\"color6\">", "<span class=\"color7\">", "<span class=\"color8\">", "<span class=\"color9\">"];
+    function hexAssigner(pull) {
+      if (pull === "error3") {
+        return  "<span class=\"error3\">"
+      } else {
+      var tagList = [
+        "<span class=\"color0 blinkFast\">",
+        "<span class=\"color1 blinkSlow\">",
+        "<span class=\"color2 blinkSlow\">",
+        "<span class=\"color3 blinkSlow\">",
+        "<span class=\"color4 blinkSlow\">",
+        "<span class=\"color5 blinkSlow\">",
+        "<span class=\"color6 blinkMed\">",
+        "<span class=\"color7 blinkMed\">",
+        "<span class=\"color8 blinkMed\">",
+        "<span class=\"color9 blinkMed\">"];
       var picker = parseInt(Math.random() * 10);
       console.log(picker);
       return tagList[picker];
-
+      }
     }
 
 
