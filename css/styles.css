@@ -1,0 +1,46 @@
+body {
+  background-color: gray;
+  color: white;
+  font-family: monospace;
+
+}
+
+#header {
+  display: block;
+  margin: 20px;
+  background-color: #ccb6a3;
+  border: solid thick #332b25;
+  border-width: 10px;
+  height: 150px;
+}
+
+h1 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 45px;
+  padding: 10px;
+  color: darkred;
+  text-align: center;
+}
+
+#intake {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+
+form {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 35px;
+  font-size: 18px;
+  text-align: center;
+}
+
+button {
+  margin: 10px;
+}
