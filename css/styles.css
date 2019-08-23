@@ -44,3 +44,24 @@ form {
 button {
   margin: 10px;
 }
+
+.display {
+
+}
+
+#error1 {
+  color: lightblue;
+  font-weight: 800;
+}
+
+#error2 {
+  color: darkblue;
+  font-weight: 800;
+}
+#error3 {
+  background-color: red;
+  color: white;
+}
+
+
+/* #f0e6bd;", "#ccbb76;", "#ccb03f;", "#d1a800;", "#b7bd99;", "#b7bd99;", "#899e20;", "#8f9e88;", "#8bd16b;", "#3eab0c */

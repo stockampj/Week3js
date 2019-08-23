@@ -1,30 +1,18 @@
 $(document).ready(function() {
   $("form#userInput").submit(function(event) {
     event.preventDefault();
-    $(".display").text("");
 
     //Text Cleaner
-    var regex = /[^0-9-]/g
-    var userInput = parseInt($("#userNumber").val().replace(regex, ""));
+    function numberCleaner(number) {
+      var regex = /[^0-9-]/g;
+      return parseInt(userInput.replace(regex, ""));
+    }
 
-    //Display Text
-    outputProcessor(userInput).forEach(function(number) {
-      if (number === "error3") {
-        $(".display").append("<span id=\"error3\">" + "I'm s0rRy, Dave. I'm afR@id I caN't d0 tHat!  " + "</span>");
-      } else if (number === "error2") {
-        $(".display").append("b00p  ");
-      } else if (number === "error1") {
-        $(".display").append("BeeP  ");
-      } else {
-        $(".display").append(number + "  ");
-      }
-    })
-
-    var hexPicker = ["#f0e6bd;", "#ccbb76;", "#ccb03f;", "#d1a800;", "#b7bd99;", "#b7bd99;", "#899e20;", "#8f9e88;", "#8bd16b;", "#3eab0c;"]
-
+    //Main Processor
     function outputProcessor(number) {
+      number = numberCleaner(number)
       var outputArray = []
-      for (var i = 0; i <= userInput; i++) {
+      for (var i = 0; i <= number; i++) {
         var element = i.toString();
         var digets = element.split("");
         if (digets.indexOf("3") >= 0) {
@@ -38,13 +26,38 @@ $(document).ready(function() {
         }
         outputArray.push(element);
       }
-      for (var i = 0; i < (outputArray.length-1); i++){
-        if ((outputArray[i] === "error3") && (outputArray[i+1] === "error3")) {
+      for (var i = 0; i < (outputArray.length - 1); i++) {
+        if ((outputArray[i] === "error3") && (outputArray[i + 1] === "error3")) {
           outputArray[i] = "";
         }
       }
       return outputArray
     };
+
+    //User interaction
+    var userInput = $("#userNumber").val();
+    //Display Text
+    $(".display").text("");
+    outputProcessor(userInput).forEach(function(number) {
+      if (number === "error3") {
+        $(".display").append("<span id=\"error3\">" + " I'm s0rRy, Dave. I'm afR@id I caN't d0 tHat! " + "</span>");
+      } else if (number === "error2") {
+      $(".display").append("<span id=\"error2\">" + " b00p " + "</span>");
+      } else if (number === "error1") {
+      $(".display").append("<span id=\"error1\">" + " BeeP " + "</span>");
+      } else {
+        $(".display").append(number + "  ");
+      }
+    });
+
+    function hexAssigner() {
+          var tagList = ["<span id=\"color0\">", "<span id=\"color1\">", "<span id=\"color2\">", "<span id=\"color3\">", "<span id=\"color4\">", "<span id=\"color5\">", "<span id=\"color6\">", "<span id=\"color7\">", "<span id=\"color8\">", "<span id=\"color9\">"];
+          var picker = parseInt(Math.random()*10);
+          console.log(picker);
+          return tagList[picker];
+
+    }
+
 
 
 
@@ -52,6 +65,13 @@ $(document).ready(function() {
 
   });
 });
+
+
+
+
+
+
+
 
 
 // function outputProcessor(number) {
@@ -72,8 +92,6 @@ $(document).ready(function() {
 //   }
 //   return outputArray
 // };
-
-
 
 
 
