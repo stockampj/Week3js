@@ -38,23 +38,24 @@ $(document).ready(function() {
     var userInput = $("#userNumber").val();
     //Display Text
     $(".display").text("");
+    $(".display").fadeIn(8000);
     outputProcessor(userInput).forEach(function(number) {
       if (number === "error3") {
-        $(".display").append("<span id=\"error3\">" + " I'm s0rRy, Dave. I'm afR@id I caN't d0 tHat! " + "</span>");
+        $(".display").append(" " + "<span class=\"error3\">" + "I'm s0rRy, Dave. I'm afR@id I caN't d0 tHat!" + "</span>" + " ");
       } else if (number === "error2") {
-      $(".display").append("<span id=\"error2\">" + " b00p " + "</span>");
+        $(".display").append(hexAssigner() + " b00p " + "</span>");
       } else if (number === "error1") {
-      $(".display").append("<span id=\"error1\">" + " BeeP " + "</span>");
+        $(".display").append(hexAssigner() + " beep " + "</span>");
       } else {
-        $(".display").append(number + "  ");
+        $(".display").append(hexAssigner() + number + "</span> ");
       }
     });
 
     function hexAssigner() {
-          var tagList = ["<span id=\"color0\">", "<span id=\"color1\">", "<span id=\"color2\">", "<span id=\"color3\">", "<span id=\"color4\">", "<span id=\"color5\">", "<span id=\"color6\">", "<span id=\"color7\">", "<span id=\"color8\">", "<span id=\"color9\">"];
-          var picker = parseInt(Math.random()*10);
-          console.log(picker);
-          return tagList[picker];
+      var tagList = ["<span class=\"color0\">", "<span class=\"color1\">", "<span class=\"color2\">", "<span class=\"color3\">", "<span class=\"color4\">", "<span class=\"color5\">", "<span class=\"color6\">", "<span class=\"color7\">", "<span class=\"color8\">", "<span class=\"color9\">"];
+      var picker = parseInt(Math.random() * 10);
+      console.log(picker);
+      return tagList[picker];
 
     }
 
