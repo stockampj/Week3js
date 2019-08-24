@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
 
 <head>
+  <link href="https://fonts.googleapis.com/css?family=Electrolize&display=swap" rel="stylesheet">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="css/styles.css" rel="stylesheet" type="text/css">
   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
@@ -10,36 +11,52 @@
 </head>
 
 <body>
-  <div class="container">
+  <div class="">
     <div class="row" id="header">
-      <div class="col-md-12">
-        <h1>HUMAN INPUT C0MPIL3R</h1>
+      <div>
+        <h1>INPUT C0MPIL3R</h1>
       </div>
     </div>
-    <div class="container">
-      <div class="row" id="greetings">
-        <div class="col-md-12">
-          <p>Before we begin. My HI-THERE! algorithms require your Designation:</p>
-          <input type="text" name="" value="" id="username">
-          <button type="button" name="button"><img class="imgbutton" src="img/blue.png" alt="blue submit button"></button>
-          <p>Human Interface: Tactful Heuristic Empathetic Respone Engine</p>
-        </div>
-      </div>
+    <div class="">
+      <div class="row">
 
-      <div class="Main">
-        <div class="row" id="intake">
-          <div class="col-md-12">
-            <form id="userInput">
-              <label for="userNumber">PleaSe EnTeR yOur nUmBer FoR Pr0cesSIng</label><br>
-              <input type="text" name="phrase" id="userNumber"><br>
-              <button type="submit" name="button">COMPILE</button>
+        <div class="<col-md-3>">
+
+          <div class="row" id="greetings">
+            <form id="tellMe">
+              <p>Your Designation:</p>
+              <div class="inputrow">
+                <input type="text" name="" value="" id="username">
+                <button type="submit" class="imgbutton">
+                  <!-- <img src="img/blue.png" width="35" height="35" alt="submit" /> -->
+                </button>
+              </div>
             </form>
+            <p id="hithere"><span id="acronym">H</span>UMAN<br><span id="acronym">I</span>NTERFACE<br>-<br><span id="acronym">T</span>ACTFUL<br><span id="acronym">H</span>EURISTIC<br><span id="acronym">E</span>MPATHETIC<br><span
+                id="acronym">R</span>ESPONSE<br><span id="acronym">E</span>NGINE</p>
           </div>
+
+          <div class="row" id="intake">
+            <div>
+              <form id="userInput">
+                <div class="inputrow">
+                  <label for="userNumber">SuBMit yOur nUmBer<br>FoR Pr0cesSIng</label><br>
+                  <input type="text" name="phrase" id="userNumber"><br>
+                  <button type="submit" name="button">COMPILE</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
         </div>
 
-        <p class="display"></p>
+        <div class="col-md-6" id=output>
+          <p class="display"></p>
+        </div>
 
       </div>
+
+
     </div>
 </body>
 
