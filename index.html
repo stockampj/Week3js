@@ -42,12 +42,27 @@
         </div>
         <br>
 
-        <form id="userInput">
+        <!-- <form id="userInput">
             <label for="userNumber">SuBMit a nUmBer<br>foR Pr0cesSIng</label>
             <br>
             <button type="submit" class="imgbutton green"></button>
             <input type="text" name="phrase" id="userNumber"><br>
+        </form> -->
+
+        <form id="userInput">
+            <label for="userNumber">SuBMit a nUmBer<br>foR Pr0cesSIng</label>
+            <br>
+            <div class="slidecontainer">
+              <button type="submit" class="imgbutton green"></button>
+              <input type="range" min="0" max="100" value="50" class="slider" id="userNumber">
+              <p id="usernumberdisplay"></p>
+            </div>
+
         </form>
+
+
+
+
 
       </div>
       <div class="col panel" id="displaypanel">

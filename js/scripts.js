@@ -7,22 +7,19 @@ $(document).ready(function() {
     username = $("#username").val();
   });
 
+  $("#userNumber").change(function(){
+    $("#usernumberdisplay").text($("#userNumber").val());
 
-
-
+  });
 
   $("form#userInput").submit(function(event) {
     event.preventDefault();
 
-    //Text Cleaner
-    function numberCleaner(number) {
-      var regex = /[^0-9-]/g;
-      return parseInt(userInput.replace(regex, ""));
-    }
+
 
     //Main Processor
     function outputProcessor(number) {
-      number = numberCleaner(number)
+      
       var outputArray = []
       for (var i = 0; i <= number; i++) {
         var element = i.toString();
@@ -53,7 +50,7 @@ $(document).ready(function() {
     $(".display").fadeIn(3000);
     outputProcessor(userInput).forEach(function(number) {
       if (number === "error3") {
-        $(".display").append(hexAssigner("error3") + "I'm s0rRy, " + username +". I'm afR@id I caN't d0 tHat!" + "</span>" + " ");
+        $(".display").append(hexAssigner("error3") + "I'm s0rRy, " + username +" I'm afR@id I caN't d0 tHat!" + "</span>" + " ");
       } else if (number === "error2") {
         $(".display").append(hexAssigner("error2") + " b00p " + "</span>");
       } else if (number === "error1") {

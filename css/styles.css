@@ -31,20 +31,26 @@ h1 {
   max-width: 200px;
 }
 
-#displaypanel {
-  margin-right: -1%;
+.left {
+  float: left;
 }
 
-label {
+#displaypanel {
+  margin-right: -4%;
+  margin-left: 20px;
+}
 
+.display {
+  text-align: justify;
 }
 
 input {
   display: block;
   background: transparent;
   color: #62ff19;
+  height: 20px;
   text-align: center;
-  font-size: 12px;
+  font-size: 20px;
   margin-bottom:  10px;
 }
 
