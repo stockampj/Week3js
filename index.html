@@ -4,7 +4,7 @@
 <head>
   <link href="https://fonts.googleapis.com/css?family=Electrolize&display=swap" rel="stylesheet">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link href="css/tstyles.css" rel="stylesheet" type="text/css">
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
   <script src="js/scripts.js"></script>
   <title>projectname</title>
@@ -42,37 +42,24 @@
         </div>
         <br>
 
-        <!-- <form id="userInput">
-            <label for="userNumber">SuBMit a nUmBer<br>foR Pr0cesSIng</label>
-            <br>
-            <button type="submit" class="imgbutton green"></button>
-            <input type="text" name="phrase" id="userNumber"><br>
-        </form> -->
-
         <form id="userInput">
-            <label for="userNumber">SuBMit a nUmBer<br>foR Pr0cesSIng</label>
-            <br>
-            <div class="slidecontainer">
-              <button type="submit" class="imgbutton green"></button>
-              <input type="range" min="0" max="100" value="50" class="slider" id="userNumber">
-              <p id="usernumberdisplay"></p>
-            </div>
+          <label for="userNumber">SuBMit a nUmBer<br>foR Pr0cesSIng</label>
+          <br>
+          <div class="slidecontainer">
+            <p id="usernumberdisplay">0</p>
+            <button type="submit" class="imgbutton green"></button>
+            <input type="range" min="0" max="100" value="0" class="slider" id="userNumber">
+          </div>
 
         </form>
 
-
-
-
-
       </div>
       <div class="col panel" id="displaypanel">
-          <p class="display"></p>
+        <p class="display"></p>
       </div>
     </div>
 
   </div>
-
-
 
 </body>
 

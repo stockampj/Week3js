@@ -4,6 +4,8 @@ body {
   background-image: url(../img/background.png);
   background-position: absolute;
   background-repeat: no-repeat;
+  padding: 20px;
+  padding-left: calc(100vw - 100%);
   color: white;
   font-family: 'Electrolize', sans-serif;
 }
@@ -31,26 +33,13 @@ h1 {
   max-width: 200px;
 }
 
-.left {
-  float: left;
-}
-
-#displaypanel {
-  margin-right: -4%;
-  margin-left: 20px;
-}
-
-.display {
-  text-align: justify;
-}
 
 input {
   display: block;
   background: transparent;
   color: #62ff19;
-  height: 20px;
   text-align: center;
-  font-size: 20px;
+  font-size: 12px;
   margin-bottom:  10px;
 }
 
@@ -94,6 +83,32 @@ input {
   color: white;
 }
 
+#usernumberdisplay {
+  text-align: center;
+  font-size: 50px;
+  color: #f0c481;
+  background-color: #7a4a00;
+  border: solid;
+  border-radius: 10px;
+  border-color: #f0c481;
+  width: 125px;
+}
+
+#displaypanel {
+  margin-right: -1%;
+  text-align: justify;
+  font-size: 16px;
+  color: #f0c481;
+  background-color: #7a4a00;
+  border: solid;
+  border-radius: 10px;
+}
+
+#special {
+  text-align: center;
+  font-size: 20px;
+}
+
 .error3 {
   color: rgb(207, 128, 139);
   background-color: rgba(12, 14, 36, 0.3);
@@ -106,7 +121,7 @@ input {
 
 .color1 {
   color: #ccbb76;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .color2 {
@@ -120,7 +135,7 @@ input {
 .color4 {
   color: #b7bd99;
   font-weight: 800;
-  font-size: 25px;
+  font-size: 22px;
 }
 
 .color5 {
@@ -134,7 +149,7 @@ input {
 .color7 {
   color: #8bd16b;
   font-weight: 800;
-  font-size: 25px;
+  font-size: 18px;
 }
 
 .color8 {

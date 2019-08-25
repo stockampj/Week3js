@@ -2,24 +2,12 @@ var username = ""
 
 $(document).ready(function() {
   $("body").fadeIn(1000);
-  $("form#tellMe").submit(function(event) {
-    event.preventDefault();
-    username = $("#username").val();
-  });
-
-  $("#userNumber").change(function(){
-    $("#usernumberdisplay").text($("#userNumber").val());
-
-  });
 
   $("form#userInput").submit(function(event) {
     event.preventDefault();
 
-
-
     //Main Processor
     function outputProcessor(number) {
-      
       var outputArray = []
       for (var i = 0; i <= number; i++) {
         var element = i.toString();
@@ -82,5 +70,24 @@ $(document).ready(function() {
       };
     };
 
+    if ($("#userNumber").val() == 42) {
+        $(".display").text("");
+        $(".display").append("<span id=\"special\">" + "boop... boop... by my calculations, this is the answer to life, the universe, and everything." + "</span>");
+    }
+
+  });
+
+  $("form#tellMe").submit(function(event) {
+    event.preventDefault();
+    $(".display").text("")
+    username = $("#username").val();
+    if (username === ""){
+      username = "unidentified human. For a more personalized experience, please sumbit your designation."
+    }
+    $(".display").append("<span id=\"special\">" + "Hello " + username + "</span>");
+  });
+
+  $("#userNumber").change(function(){
+    $("#usernumberdisplay").text($("#userNumber").val());
   });
 });
