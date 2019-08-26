@@ -6,9 +6,9 @@ $(document).ready(function() {
   $("form#userInput").submit(function(event) {
     event.preventDefault();
 
-    //Main Processor
+    //Main Processor - The entire coputation is beween lines 10 and 32;
     function outputProcessor(number) {
-      var outputArray = []
+      var outputArray = [];
       for (var i = 0; i <= number; i++) {
         var element = i.toString();
         var digets = element.split("");
@@ -35,10 +35,9 @@ $(document).ready(function() {
     var userInput = $("#userNumber").val();
     //Display Text
     $(".display").text("");
-    $(".display").fadeIn(3000);
     outputProcessor(userInput).forEach(function(number) {
       if (number === "error3") {
-        $(".display").append(hexAssigner("error3") + "I'm s0rRy, " + username +" I'm afR@id I caN't d0 tHat!" + "</span>" + " ");
+        $(".display").append(hexAssigner("error3") + "I'm s0rRy, " + username + " I'm afR@id I caN't d0 tHat!" + "</span>" + " ");
       } else if (number === "error2") {
         $(".display").append(hexAssigner("error2") + " b00p " + "</span>");
       } else if (number === "error1") {
@@ -48,21 +47,23 @@ $(document).ready(function() {
       }
     });
 
+
+    // This function changes the styles of the individule numbers with an RNG
     function hexAssigner(pull) {
       if (pull === "error3") {
-        return "<span class=\"error3\">"
+        return "<span class=\"error3 blinkFast\">"
       } else {
         var tagList = [
-          "<span class=\"color0 blinkFast\">",
-          "<span class=\"color1 blinkSlow\">",
-          "<span class=\"color2 blinkSlow\">",
-          "<span class=\"color3 blinkSlow\">",
-          "<span class=\"color4 blinkSlow\">",
+          "<span class=\"color0 blinknone\">",
+          "<span class=\"color1 blinknone\">",
+          "<span class=\"color2 blinknone\">",
+          "<span class=\"color3 blinknone\">",
+          "<span class=\"color4 blinknone\">",
           "<span class=\"color5 blinkSlow\">",
-          "<span class=\"color6 blinkMed\">",
-          "<span class=\"color7 blinkMed\">",
-          "<span class=\"color8 blinkMed\">",
-          "<span class=\"color9 blinkMed\">"
+          "<span class=\"color6 blinknone\">",
+          "<span class=\"color7 blinknone\">",
+          "<span class=\"color8 blinksMed\">",
+          "<span class=\"color9 blinknone\">"
         ];
         var picker = parseInt(Math.random() * 10);
         console.log(picker);
@@ -70,24 +71,42 @@ $(document).ready(function() {
       };
     };
 
+
+    //Special circumstance
     if ($("#userNumber").val() == 42) {
-        $(".display").text("");
-        $(".display").append("<span id=\"special\">" + "boop... boop... by my calculations, this is the answer to life, the universe, and everything." + "</span>");
+      $(".display").text("");
+      $(".display").append("<span id=\"special\">" + "boop... boop... by my calculations, this is the answer to life, the universe, and everything." + "</span>");
     }
 
+
+    username = $("#username").val();
+    if (username === "") {
+      $(".display").text("")
+      $(".display").append("<span id=\"special\">" + "PLEASE SUBMIT YOUR DESIGNATION FOR PROCESSING")
+    };
   });
 
+
+  // This handels the User's Name submition and the displayed behavior
   $("form#tellMe").submit(function(event) {
     event.preventDefault();
     $(".display").text("")
     username = $("#username").val();
-    if (username === ""){
+    if (username === "") {
       username = "unidentified human. For a more personalized experience, please sumbit your designation."
     }
     $(".display").append("<span id=\"special\">" + "Hello " + username + "</span>");
+    $("#username").val(username);
   });
 
-  $("#userNumber").change(function(){
-    $("#usernumberdisplay").text($("#userNumber").val());
+
+  // This changes the user's number display on the slider
+  $("#userNumber").change(function() {
+    $("#usernumberdisplay").text("");
+    if ($("#userNumber").val() == 42) {
+      $("#usernumberdisplay").append("<span class=\"surprise\">" + $("#userNumber").val() + "</span>");
+    } else {
+      $("#usernumberdisplay").append("<span class=\"blinkFast\">" + $("#userNumber").val() + "</span>")
+    };
   });
 });

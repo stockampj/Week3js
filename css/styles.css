@@ -24,7 +24,7 @@ h1 {
   margin-right: auto;
   font-size: 35px;
   padding-top: 20px;
-  color: #f0c481;
+  color: #c48427;
   text-align: center;
 }
 
@@ -33,21 +33,36 @@ h1 {
   max-width: 200px;
 }
 
+#inputBackgroundPanel {
+  display: block;
+  position:fixed;
+  height: 600px;
+  z-index: -1;
+}
 
 input {
-  display: block;
+  display: inline-block;
   background: transparent;
-  color: #62ff19;
+  color: #c48427;
+  background-color: #362103;
+  background-image: url(../img/Static.gif);
+  background-size: contain;
+  border: solid thin;
+  border-radius: 10px;
+  border-color: #c48427;
+  width: 125px;
   text-align: center;
-  font-size: 12px;
-  margin-bottom:  10px;
+  margin-bottom: 10px;
+  font-size: 14px;
 }
 
 .imgbutton {
-  display: block;
+  display: inline-block;
   border-radius: 100%;
   height: 25px;
   width: 25px;
+  cursor: pointer;
+  outline: none;
   float: right;
 }
 
@@ -75,7 +90,7 @@ input {
   writing-mode: vertical-lr;
   text-orientation: upright;
   font-size: 12px;
-  color: #f0c481;
+  color: #c48427;
 }
 
 #acronym {
@@ -86,22 +101,33 @@ input {
 #usernumberdisplay {
   text-align: center;
   font-size: 50px;
-  color: #f0c481;
-  background-color: #7a4a00;
-  border: solid;
+  color: #c48427;
+  background-color: #362103;
+  background-image: url(../img/Static.gif);
+  background-size: contain;
+  border: solid thin;
   border-radius: 10px;
-  border-color: #f0c481;
+  border-color: #c48427;
   width: 125px;
 }
 
 #displaypanel {
   margin-right: -1%;
+  margin-left: 20px;
   text-align: justify;
-  font-size: 16px;
-  color: #f0c481;
-  background-color: #7a4a00;
-  border: solid;
+  font-size: 14px;
+  color: #c48427;
+  background-color: #362103;
+  background-image: url(../img/Static.gif);
+  background-size: contain;
+  border: solid thin;
   border-radius: 10px;
+  height: 420px;
+  overflow: auto;
+}
+
+.display {
+  margin: 1%;
 }
 
 #special {
@@ -109,55 +135,61 @@ input {
   font-size: 20px;
 }
 
+.surprise {
+  color: green;
+  font-weight: 800;
+}
+
 .error3 {
-  color: rgb(207, 128, 139);
-  background-color: rgba(12, 14, 36, 0.3);
+  color: #c48427;
+  background-color: #362103;
 }
 
 .color0 {
-  color: #f0e6bd;
+  color: #c29c65;
   font-weight: 800;
 }
 
 .color1 {
-  color: #ccbb76;
-  font-size: 20px;
+  color:#c49d64;
+  font-size: 16px;
 }
 
 .color2 {
-  color: #ccb03f;
+  color: #c28936;
 }
 
 .color3 {
-  color: #d1a800;
+  color: #c97700;
 }
 
 .color4 {
-  color: #b7bd99;
+  color: #c4ae64;
   font-weight: 800;
-  font-size: 22px;
+  font-size: 16px;
 }
 
 .color5 {
-  color: #899e20;
+  color: #e6d291;
 }
 
 .color6 {
-  color: #8f9e88;
+  color: #d1ad36;
 }
 
 .color7 {
-  color: #8bd16b;
+  color: #c79a06;
   font-weight: 800;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .color8 {
-  color: #3eab0c;
+  color: #c7c48f;
 }
 
 .color9 {
-  color: white;
+  color: #ffaa54;
+  background-color: #634102;
 }
 
 /* Blinking Effects were found here: https://codepen.io/_Master_/pen/PRdjmQ?editors=1100 */
@@ -167,14 +199,14 @@ input {
   }
 
   to {
-    opacity: 0.2;
+    opacity: 0.3;
   }
 }
 
 .blinkFast {
   text-decoration: blink;
   -webkit-animation-name: blinker;
-  -webkit-animation-duration: 2.4s;
+  -webkit-animation-duration: .8s;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-timing-function: ease-in-out;
   -webkit-animation-direction: alternate;
@@ -183,7 +215,7 @@ input {
 .blinkMed {
   text-decoration: blink;
   -webkit-animation-name: blinker;
-  -webkit-animation-duration: 4.1s;
+  -webkit-animation-duration: 3s;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-timing-function: ease-in-out;
   -webkit-animation-direction: alternate;
@@ -192,8 +224,18 @@ input {
 .blinkSlow {
   text-decoration: blink;
   -webkit-animation-name: blinker;
-  -webkit-animation-duration: 7.2;
+  -webkit-animation-duration: 5s;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-timing-function: ease-in-out;
   -webkit-animation-direction: alternate;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c48427;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
