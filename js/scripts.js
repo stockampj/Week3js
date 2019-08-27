@@ -1,35 +1,36 @@
 var username = ""
 
+//Main Processor - The entire coputation is beween lines 10 and 32;
+function outputProcessor(number) {
+  var outputArray = [];
+  for (var i = 0; i <= number; i++) {
+    var element = i.toString();
+    var digets = element.split("");
+    if (digets.indexOf("3") >= 0) {
+      element = "error3";
+    } else if (digets.indexOf("2") >= 0) {
+      element = "error2";
+    } else if (digets.indexOf("1") >= 0) {
+      element = "error1";
+    } else {
+      element = i;
+    }
+    outputArray.push(element);
+  }
+  for (var i = 0; i < (outputArray.length - 1); i++) {
+    if ((outputArray[i] === "error3") && (outputArray[i + 1] === "error3")) {
+      outputArray[i] = "";
+    }
+  }
+  return outputArray
+};
+
+
 $(document).ready(function() {
   $("body").fadeIn(1000);
 
   $("form#userInput").submit(function(event) {
     event.preventDefault();
-
-    //Main Processor - The entire coputation is beween lines 10 and 32;
-    function outputProcessor(number) {
-      var outputArray = [];
-      for (var i = 0; i <= number; i++) {
-        var element = i.toString();
-        var digets = element.split("");
-        if (digets.indexOf("3") >= 0) {
-          element = "error3";
-        } else if (digets.indexOf("2") >= 0) {
-          element = "error2";
-        } else if (digets.indexOf("1") >= 0) {
-          element = "error1";
-        } else {
-          element = i;
-        }
-        outputArray.push(element);
-      }
-      for (var i = 0; i < (outputArray.length - 1); i++) {
-        if ((outputArray[i] === "error3") && (outputArray[i + 1] === "error3")) {
-          outputArray[i] = "";
-        }
-      }
-      return outputArray
-    };
 
     //User interaction
     var userInput = $("#userNumber").val();
@@ -93,9 +94,11 @@ $(document).ready(function() {
     $(".display").text("")
     username = $("#username").val();
     if (username === "") {
-      username = "unidentified human. For a more personalized experience, please sumbit your designation."
-    }
+      username = "unidentified human"
+      $(".display").append("<span id=\"special\">" + "Hello " + username + ". For a more personalized experience, please sumbit your designation.</span>")
+    } else {
     $(".display").append("<span id=\"special\">" + "Hello " + username + "</span>");
+    }
     $("#username").val(username);
   });
 

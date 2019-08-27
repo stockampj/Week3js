@@ -22,7 +22,6 @@ _This webpage gathers a number chosen by the user and will give every number bet
 |Numbers that contain a 1: all digits are replaced (all digits) with "Beep!"|1|0, Beep|
 |Numbers that contain a 2: all digits are replaced (all digits) with "Boop!"|24|0, Beep, Boop|
 |Numbers that contain a 3: all digits are replaced (all digits) with "I'm sorry, Dave. I'm afraid I can't do that."|5|0, Beep, boop, "I'm sorry Dave..." 4, 5,|
-||||
 
 
 ## Known Bugs
